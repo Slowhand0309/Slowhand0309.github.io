@@ -99,3 +99,5 @@ Finderで現在開いているディレクトリに移動したりなどなど�
 
 
 他にも色々あるので、詳しくは[ここ](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)を参照して下さい。
+
+![optimized](http://slowhand0309.github.io/images/blog/oh-my-zsh/oh-my-zsh-ctrl+r.gif)
