@@ -65,7 +65,7 @@ iex(5)> sample_case.([1, 2, 3])
 異なる条件で分岐を判定する。他言語の`elseif`にあたる。
 
 例)
-```
+```elixir
 iex(6)> sample_cond = fn x, y ->
 ...(6)> cond do
 ...(6)> x == 1 and y == 1 ->
@@ -94,7 +94,7 @@ iex(9)> sample_cond.(3, 3)
 `if, unless`に関しては、`elseif`がないという事以外は他言語と同じ。
 
 例)
-```
+```elixir
 iex(10)> if true do
 ...(10)> "true"
 ...(10)> else
@@ -120,7 +120,7 @@ do〜endブロック。Elixirでは以下3種類のブロックの書き方が�
 
 一行で書く場合。<br />
 例)
-```
+```elixir
 iex(14)> if true, do: "true"
 "true"
 ```
@@ -129,7 +129,7 @@ iex(14)> if true, do: "true"
 
 複数行で書く場合。<br />
 例)
-```
+```elixir
 iex(15)> if true, do: (
 ...(15)> x = "hoge"
 ...(15)> x <> "fuga"
@@ -141,7 +141,7 @@ iex(15)> if true, do: (
 
 これも同じく複数行で書ける。<br />
 例)
-```
+```elixir
 iex(18)> if true do
 ...(18)> x = 1 + 3
 ...(18)> x + 10
