@@ -26,15 +26,16 @@ Google Apps Scriptで作成しました。
 
 <br />
 
-#### 完成イメージ
+##### 完成イメージ
 *****
+
 まず作成するBotがどんなものになるかキャプチャを載せてます↓
 
 No.001
 
 指定したタイミングでSlackにアクセス状況を通知しています
 
-#### SlackでWebHooks URLの取得
+##### SlackでWebHooks URLの取得
 ***
 
 まずは通知したいSlackのTeamのWebHooksのトークンを取得する<br />
@@ -54,7 +55,7 @@ No.003
 No.004
 
 
-#### Google Analytics APIの有効化
+##### Google Analytics APIの有効化
 ***
 
 Google Apps Script上でGoogle Analytics APIを使う為に有効化を行う
