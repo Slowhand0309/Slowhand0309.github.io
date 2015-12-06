@@ -46,7 +46,7 @@ $ cd TestSwift
 platform :ios, "6.0"
 pod 'AFNetworking', '~> 2.0'
 ```
-↑有名な`AFNetworking`ライブラリをiOS開発プロジェクトに取り込む
+↑例として`AFNetworking`ライブラリをiOS開発プロジェクトに取り込む
 
 ライブラリ取り込む前のファイル一覧
 ```sh
@@ -77,3 +77,20 @@ Podfile               Pods                  TestSwift.xcodeproj   TestSwiftTests
 Podfile.lock          TestSwift             TestSwift.xcworkspace
 ```
 作成された`TestSwift.xcworkspace`を開いて開発を行う
+
+* Xcodeを開いた様子
+
+また、今回はSwiftからObjective-Cのライブラリを使用する為、
+ブリッジ用のヘッダを作成する
+
+```C
+#ifndef _AFTest_Bridging_Header_h
+#define _AFTest_Bridging_Header_h
+
+#import <AFNetworking/AFNetworking.h>
+
+#endif /* _AFTest_Bridging_Header_h */
+```
+これをプロジェクトに追加し`Swift Compiler - Code Generation`の`Objective-C Bridging Header`に設定してやる
+
+これで`AFNetworking`ライブラリが使用可能になればOK
