@@ -20,7 +20,8 @@ Timestamp     A/R    Flags  if Domain               Service Type         Instanc
 $ dns-sd -G v4 IRKitXXXX.local
 DATE: ---Sun 13 Dec 2015---
 14:35:05.507  ...STARTING...
-Timestamp     A/R Flags if Hostname                               Address                                      14:35:06.874  Add     2  4 irkitxxxx.local.                       192.168.XXX.XXX                                 ```
+Timestamp     A/R Flags if Hostname                               Address                                      14:35:06.874  Add     2  4 irkitxxxx.local.                       192.168.XXX.XXX
+```
 
 #### 信号の取得
 ***
