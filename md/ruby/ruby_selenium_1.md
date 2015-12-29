@@ -72,7 +72,7 @@ driver.quit # ブラウザ終了
 
 いざ実行!! ↓のように起動しキーワードを検索すれば成功
 
-* gif
+![optimaize](http://slowhand0309.github.io/images/blog/selenium/selenium.gif)
 
 保存されたスクリーンショットがこちら↓
 
