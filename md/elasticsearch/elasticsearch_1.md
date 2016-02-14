@@ -1,6 +1,6 @@
 ## 新しい技術を学んでみる 6 - Elasticsearch -
 
-** Elasticsearch **
+**Elasticsearch**
 
 AWSのサービスと勘違いしそうな名前ですが、、、<br>
 ※すでにAmazon Elasticsearch ServiceというElasticsearchを使った<br>
