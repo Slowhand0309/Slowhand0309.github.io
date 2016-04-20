@@ -104,6 +104,8 @@ ButterKnife.bind(this);
     android:layout_gravity="right" />
 ```
 
+img2
+
 このボタンをクリックした時の動作を以下のように設定してやります。
 
 ```java
@@ -122,6 +124,6 @@ String mMessage;
 ```
 ・ボタンをクリックした時
 
-img2
+img3
 
 ん〜実に実装する手間が省けて便利です^^
