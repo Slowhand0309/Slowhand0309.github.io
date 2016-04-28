@@ -83,6 +83,7 @@ Error: Cannot find module 'phonegap-build-api'
     at Module.require (module.js:364:17)
 ```
 
+やっぱりアップデートが極端だったんでしょうか・・<br>
 色々試してもダメだったので、phonegapを再インストールしてみ他ところエラーがなくなりました。
 ```sh
 $ sudo npm uninstall -g phonegap
@@ -101,24 +102,26 @@ $ npm install grunt-exec --save-dev
 プロジェクトのビルドと実行をタスク化してみたいと思います。
 
 ```js
-grunt.loadNpmTasks('grunt-exec');
+module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-exec');
 
-grunt.initConfig({
-  exec: {
-    build {
-      command: 'phonegap cordova build'
-    },
-    run {
-      command: 'phonegap cordova run'
-    }
-  }
-});
+  grunt.initConfig({
+   exec: {
+      build: {
+         command: 'phonegap cordova build'
+      },
+      run: {
+         command: 'phonegap cordova run'
+      }
+   }
+  });
 
-grunt.registerTask('default', ['exec:build', 'exec:run']);
+  grunt.registerTask('default', ['exec:build', 'exec:run']);
+};
 ```
 
 これで
 ```sh
 $ grunt
 ```
-とするとビルドと実行が可能になりました^^
+とするとビルドと実行が可能になりました^^。
