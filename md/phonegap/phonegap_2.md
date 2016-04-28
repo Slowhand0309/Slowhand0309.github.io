@@ -65,9 +65,60 @@ $ phonegap cordova build <ios/android>
 $ phonegap cordova run <ios/android>
 ```
 
-このビルドと実行をGruntのタスク化にしてみたいと思います。<br>
-タスク化するにあたり`grunt-exec`をインストールします。
+※ と思ったらphonegapコマンドで以下のようなエラーが・・・
+```sh
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module 'phonegap-build-api'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/usr/local/lib/node_modules/phonegap/node_modules/phonegap-build/lib/phonegap-build/login.js:6:14)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+```
+
+色々試してもダメだったので、phonegapを再インストールしてみ他ところエラーがなくなりました。
+```sh
+$ sudo npm uninstall -g phonegap
+$ npm install -g phonegap
+```
+
+エラーがなくなった所でビルドと実行をGruntのタスク化にしてみたいと思います。<br>
+タスク化するにあたり`grunt`と`grunt-exec`をインストールします。
 
 ```sh
+$ npm install -g grunt-cli
+$ npm install grunt --save-dev
 $ npm install grunt-exec --save-dev
 ```
+
+プロジェクトのビルドと実行をタスク化してみたいと思います。
+
+```js
+grunt.loadNpmTasks('grunt-exec');
+
+grunt.initConfig({
+  exec: {
+    build {
+      command: 'phonegap cordova build'
+    },
+    run {
+      command: 'phonegap cordova run'
+    }
+  }
+});
+
+grunt.registerTask('default', ['exec:build', 'exec:run']);
+```
+
+これで
+```sh
+$ grunt
+```
+とするとビルドと実行が可能になりました^^
