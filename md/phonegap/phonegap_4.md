@@ -44,52 +44,49 @@ import AVFoundation
 
 class CustomCameraViewController: UIViewController {
 
-    var mySession : AVCaptureSession!
-    var myDevice : AVCaptureDevice!
-    var myImageOutput : AVCaptureStillImageOutput!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // セッションの作成.
-        mySession = AVCaptureSession()
+        let session = AVCaptureSession()
 
         // デバイス一覧の取得.
         let devices = AVCaptureDevice.devices()
 
         // バックカメラをmyDeviceに格納.
-        for device in devices{
-            if(device.position == AVCaptureDevicePosition.Back){
-                myDevice = device as! AVCaptureDevice
+        var device : AVCaptureDevice!
+        for d in devices{
+            if(d.position == AVCaptureDevicePosition.Back){
+                device = d as! AVCaptureDevice
             }
         }
 
         let videoInput: AVCaptureInput!
         // バックカメラからVideoInputを取得.
         do {
-            videoInput = try AVCaptureDeviceInput.init(device: myDevice)
+            videoInput = try AVCaptureDeviceInput.init(device: device)
         } catch {
             videoInput = nil
         }
 
         // セッションに追加.
-        mySession.addInput(videoInput)
+        session.addInput(videoInput)
 
         // 出力先を生成.
-        myImageOutput = AVCaptureStillImageOutput()
+        let imageOutput = AVCaptureStillImageOutput()
 
         // セッションに追加.
-        mySession.addOutput(myImageOutput)
+        session.addOutput(imageOutput)
 
         // 画像を表示するレイヤーを生成.
-        let myVideoLayer : AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer.init(session:mySession)
-        myVideoLayer.frame = self.view.bounds
-        myVideoLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        let videoLayer : AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer.init(session: session)
+        videoLayer.frame = self.view.bounds
+        videoLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
 
         // Viewに追加.
-        self.view.layer.addSublayer(myVideoLayer)
+        self.view.layer.addSublayer(videoLayer)
 
         // セッション開始.
-        mySession.startRunning()
+        session.startRunning()
     }
 
     override func didReceiveMemoryWarning() {
