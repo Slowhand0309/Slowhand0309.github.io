@@ -31,8 +31,8 @@ MNISTの学習では**`Softmax Regressions (ソフトマックス回帰)`**を�
 
 > ソフトマックスとは?
 
-n次元実数ベクトル`$X = (X1, ・・・ Xn)$`を受け取って<br>
-n次元実数ベクトル`$Y = (Y1, ・・・ Yn)$`を返す。<br>
+n次元実数ベクトル`X = (X1, ・・・ Xn)`を受け取って<br>
+n次元実数ベクトル`Y = (Y1, ・・・ Yn)`を返す。<br>
 ただし、`Yi = E^Xi / E^X1 + E^X2 + ・・・ E^Xn`
 
 ・・・・:question::question::question::question::question:<br>
