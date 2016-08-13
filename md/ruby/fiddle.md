@@ -193,21 +193,21 @@ pointer = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
 M.initMember(pointer)
 # Members構造体へキャスト
 members = M::MEMBERS.new(pointer.ptr)
-puts members.no1
-puts members.name1.pack('U*')
-puts members.no2
-puts members.name2.pack('U*')
-puts members.no3
-puts members.name3.pack('U*')
+puts members.no1 #=> 1
+puts members.name1.pack('U*') #=> hogehoge1
+puts members.no2 #=> 2
+puts members.name2.pack('U*') #=> hogehoge2
+puts members.no3 #=> 3
+puts members.name3.pack('U*') #=> hogehoge3
 
 # nextPtrをMembers構造体へキャスト
 members2 = M::MEMBERS.new(members.nextPtr)
-puts members2.no1
-puts members2.name1.pack('U*')
-puts members2.no2
-puts members2.name2.pack('U*')
-puts members2.no3
-puts members2.name3.pack('U*')
+puts members2.no1 #=> 11
+puts members2.name1.pack('U*') #=> fugafuga1
+puts members2.no2 #=> 12
+puts members2.name2.pack('U*') #=> fugafuga2
+puts members2.no3 #=> 13
+puts members2.name3.pack('U*') #=> fugafuga3
 
 M.freeMember(pointer)
 ```
