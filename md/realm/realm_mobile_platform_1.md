@@ -139,6 +139,6 @@ img9
 接続後に起動したアプリ上で`TextField`に文字列を入力し`Add`を押すと<br>
 データが追加されてればOKです。
 
-gif1
+![gif](http://slowhand0309.github.io/images/blog/realm/realm_mobile_platform_1.gif)
 
 今回修正した`ViewController.swift`は[ここ](https://gist.github.com/Slowhand0309/ee1760b10c74250e9cd9619af8f62ba7)で見れます。
