@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 
 動作結果
 
-img1
+![img1](http://slowhand0309.github.io/images/blog/android/data_binding/img1.png)
 
 TextViewに値が反映されています。
 
@@ -199,4 +199,4 @@ public class Item {
 
 動作結果
 
-img2
+![img2](http://slowhand0309.github.io/images/blog/android/data_binding/img2.png)
