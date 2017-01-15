@@ -10,11 +10,13 @@
 この時に気をつけた事を書いてみようかと思います。
 
 ### 前提
+****
 
 ES6で書いて[webpack](http://webpack.github.io)を使って[Babel](https://babeljs.io)でES5に変換<br>
 [node-google-apps-script](https://www.npmjs.com/package/node-google-apps-script)でGoogle Drive上にアップしてます。
 
 ### 「関数を選択」に関数が出てこない!!
+****
 
 これ↓
 
@@ -56,6 +58,7 @@ module.exports = {
 こんな感じで追加してやると、`function main() ~`を作ってくれます!!
 
 ### ウェブアプリケーションとして導入しても反映されない!!
+****
 
 こっから選択してGASをウェブアプリとして公開するやつです。
 
